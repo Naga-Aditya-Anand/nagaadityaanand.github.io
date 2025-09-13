@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chintalapudi Naga Aditya Anand - AI & Data Science Student Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Styles to match the theme */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc; /* A light gray background */
+        }
+        :root {
+            --primary: #2C3E50; /* Professional Navy */
+            --secondary: #3498DB; /* Trustworthy Blue */
+            --accent: #E74C3C; /* Highlight Red */
+            --muted-foreground: #64748b;
+            --background: #ffffff;
+            --card: #ffffff;
+            --card-foreground: #020817;
+            --primary-foreground: #f8fafc;
+            --secondary-foreground: #f8fafc;
+        }
+        .text-primary { color: var(--primary); }
+        .bg-primary { background-color: var(--primary); }
+        .text-primary-foreground { color: var(--primary-foreground); }
+        .text-secondary { color: var(--secondary); }
+        .bg-secondary { background-color: var(--secondary); }
+        .text-secondary-foreground { color: var(--secondary-foreground); }
+        .text-muted-foreground { color: var(--muted-foreground); }
+        .bg-card { background-color: var(--card); }
+        .text-card-foreground { color: var(--card-foreground); }
+        .border-primary-20 { border-color: rgba(44, 62, 80, 0.2); }
+
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom shadow for cards */
+        .shadcn-card {
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .shadcn-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+
+<body class="text-slate-800">
+
+    <!-- Header & Navigation -->
+    <header>
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:block fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b">
+            <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
+                <a href="#hero" class="font-bold text-xl text-primary">Portfolio</a>
+                <div class="flex items-center gap-1">
+                    <a href="#hero" class="px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 rounded-md flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+                        Home
+                    </a>
+                    <a href="#skills" class="px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 rounded-md flex items-center gap-2">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        Skills
+                    </a>
+                    <a href="#education" class="px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 rounded-md flex items-center gap-2">
+                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>
+                        Education
+                    </a>
+                    <a href="#projects" class="px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 rounded-md flex items-center gap-2">
+                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2"></path></svg>
+                        Projects
+                    </a>
+                    <a href="#certifications" class="px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 rounded-md flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path><circle cx="12" cy="8" r="6"></circle></svg>
+                        Certifications
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Navigation -->
+        <nav class="md:hidden fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b">
+            <div class="px-5 py-4 flex items-center justify-between">
+                <a href="#hero" class="font-bold text-xl text-primary">Portfolio</a>
+                <button id="mobile-menu-button" class="p-2 rounded-md hover:bg-slate-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div id="mobile-menu" class="hidden px-5 pb-4 border-t">
+                <a href="#hero" class="block py-2 text-slate-700 hover:text-primary">Home</a>
+                <a href="#skills" class="block py-2 text-slate-700 hover:text-primary">Skills</a>
+                <a href="#education" class="block py-2 text-slate-700 hover:text-primary">Education</a>
+                <a href="#projects" class="block py-2 text-slate-700 hover:text-primary">Projects</a>
+                <a href="#certifications" class="block py-2 text-slate-700 hover:text-primary">Certifications</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-[calc(100vh-5rem)] flex items-center justify-center bg-gradient-to-br from-white to-slate-100 p-5">
+            <div class="shadcn-card rounded-xl bg-card text-card-foreground max-w-4xl w-full p-8 md:p-12 text-center">
+                <div class="space-y-6">
+                    <div class="flex justify-center">
+                        <div class="relative flex shrink-0 overflow-hidden rounded-full w-40 h-40 border-4 border-primary-20">
+                            <img src="./profile.jpg" alt="Chintalapudi Naga Aditya Anand" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="text-4xl md:text-5xl font-bold text-primary mb-2">
+                            <div>Chintalapudi</div>
+                            <div>Naga Aditya Anand</div>
+                        </h1>
+                        <h2 class="text-xl md:text-2xl font-medium text-secondary">
+                            AI &amp; Data Science Student, IIIT Sricity
+                        </h2>
+                    </div>
+                    <p class="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                        Aspiring Artificial Intelligence and Data Science Engineer (3rd year B.Tech) seeking internship opportunities to apply strong programming, problem-solving, and machine learning skills in real-world projects while gaining practical industry exposure.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4 text-sm">
+                        <a href="mailto:nagaadityaanand@gmail.com" class="px-3 py-2 border rounded-md hover:bg-slate-50 flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                            nagaadityaanand@gmail.com
+                        </a>
+                        <a href="tel:+916309637248" class="px-3 py-2 border rounded-md hover:bg-slate-50 flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            +91-6309637248
+                        </a>
+                    </div>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <!-- Add a link to your resume file here -->
+                        <a href="./Resume.pdf" download="Chintalapudi_Naga_Aditya_Anand_Resume.pdf" class="px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-md hover:opacity-90 flex items-center gap-2">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg>
+                            Download Resume
+                        </a>
+                        <a href="https://github.com/Naga-Aditya-Anand/" target="_blank" class="px-4 py-2 bg-secondary text-secondary-foreground text-sm font-medium rounded-md hover:opacity-90 flex items-center gap-2">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                            GitHub
+                        </a>
+                         <a href="https://leetcode.com/u/nagaadityaanand/" target="_blank" class="px-4 py-2 bg-secondary text-secondary-foreground text-sm font-medium rounded-md hover:opacity-90 flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+                            LeetCode
+                        </a>
+                         <a href="https://linkedin.com/in/naga-aditya-anand-chintalapudi-44a61b28b/" target="_blank" class="px-4 py-2 bg-secondary text-secondary-foreground text-sm font-medium rounded-md hover:opacity-90 flex items-center gap-2">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 px-5 bg-slate-50">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Technical Skills</h2>
+                    <p class="text-lg text-muted-foreground max-w-2xl mx-auto">A comprehensive overview of my technical expertise and core competencies</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Programming Languages -->
+                    <div class="shadcn-card rounded-xl bg-card text-card-foreground">
+                        <div class="p-6 text-center">
+                            <div class="flex justify-center mb-2 text-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            </div>
+                            <h3 class="font-semibold text-lg">Programming Languages</h3>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <div class="flex flex-wrap gap-2 justify-center">
+                                <span class="px-2.5 py-0.5 text-sm font-semibold bg-primary text-primary-foreground rounded-md">C</span>
+                                <span class="px-2.5 py-0.5 text-sm font-semibold bg-primary text-primary-foreground rounded-md">Python</span>
+                                <span class="px-2.5 py-0.5 text-sm font-semibold bg-primary text-primary-foreground rounded-md">Java</span>
+                                <span class="px-2.5 py-0.5 text-sm font-semibold bg-primary text-primary-foreground rounded-md">SQL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Core Courses -->
+                    <div class="shadcn-card rounded-xl bg-card text-card-foreground">
+                        <div class="p-6 text-center">
+                            <div class="flex justify-center mb-2 text-primary">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5V19A9 3 0 0 0 21 19V5"></path><path d="M3 12A9 3 0 0 0 21 12"></path></svg>
+                            </div>
+                            <h3 class="font-semibold text-lg">Core Courses</h3>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <div class="flex flex-wrap gap-2 justify-center">
+                                <span class="px-2.5 py-0.5 text-sm font-semibold bg-secondary text-secondary-foreground rounded-md">DSA</span>
+                                <span class="px-2.5 py-0.5 text-sm font-semibold bg-secondary text-secondary-foreground rounded-md">ADSA</span>
+                                <span class="px-2.5 py-0.5 text-sm font-semibold bg-secondary text-secondary-foreground rounded-md">OOP</span>
+                                <span class="px-2.5 py-0.5 text-sm font-semibold bg-secondary text-secondary-foreground rounded-md">ML</span>
+                                <span class="px-2.5 py-0.5 text-sm font-semibold bg-secondary text-secondary-foreground rounded-md">DL</span>
+                                <span class="px-2.5 py-0.5 text-sm font-semibold bg-secondary text-secondary-foreground rounded-md">CCN</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Frameworks & Tools -->
+                    <div class="shadcn-card rounded-xl bg-card text-card-foreground">
+                         <div class="p-6 text-center">
+                            <div class="flex justify-center mb-2 text-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                            </div>
+                            <h3 class="font-semibold text-lg">Frameworks &amp; Tools</h3>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <div class="flex flex-wrap gap-2 justify-center">
+                                <span class="px-2.5 py-0.5 text-sm font-semibold border rounded-md">Android Studio</span>
+                                <span class="px-2.5 py-0.5 text-sm font-semibold border rounded-md">Firebase</span>
+                                <span class="px-2.5 py-0.5 text-sm font-semibold border rounded-md">OpenCV</span>
+                                <span class="px-2.5 py-0.5 text-sm font-semibold border rounded-md">TensorFlow</span>
+                                <span class="px-2.5 py-0.5 text-sm font-semibold border rounded-md">Keras</span>
+                                <span class="px-2.5 py-0.5 text-sm font-semibold border rounded-md">Pandas</span>
+                                <span class="px-2.5 py-0.5 text-sm font-semibold border rounded-md">NumPy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="py-20 px-5">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Education</h2>
+                    <p class="text-lg text-muted-foreground max-w-2xl mx-auto">Academic achievements and educational background</p>
+                </div>
+                <div class="space-y-6">
+                    <!-- B.Tech -->
+                    <div class="shadcn-card rounded-xl bg-card text-card-foreground">
+                        <div class="p-6">
+                            <div class="flex flex-col sm:flex-row items-start justify-between gap-4">
+                                <div class="flex-1">
+                                    <h3 class="font-semibold text-xl text-primary mb-2 flex items-center gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>
+                                        B.Tech in Artificial Intelligence and Data Science
+                                    </h3>
+                                    <p class="text-lg font-medium text-secondary mb-1">IIIT Sricity</p>
+                                    <p class="text-muted-foreground flex items-center gap-1 text-sm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>
+                                        2023 – Present
+                                    </p>
+                                </div>
+                                <div class="text-right flex-shrink-0">
+                                    <span class="px-2.5 py-1 text-sm font-semibold bg-primary text-primary-foreground rounded-md flex items-center gap-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path><circle cx="12" cy="8" r="6"></circle></svg>
+                                        CGPA: 8.20
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Class XII -->
+                    <div class="shadcn-card rounded-xl bg-card text-card-foreground">
+                        <div class="p-6">
+                            <div class="flex flex-col sm:flex-row items-start justify-between gap-4">
+                                <div class="flex-1">
+                                    <h3 class="font-semibold text-xl text-primary mb-2 flex items-center gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>
+                                        Class XII (Intermediate)
+                                    </h3>
+                                    <p class="text-lg font-medium text-secondary mb-1">Sri Chaitanya Junior College <span class="text-muted-foreground text-base">, TGBIE</span></p>
+                                    <p class="text-muted-foreground flex items-center gap-1 text-sm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>
+                                        2021 – 2023
+                                    </p>
+                                </div>
+                                <div class="text-right flex-shrink-0">
+                                    <span class="px-2.5 py-1 text-sm font-semibold bg-primary text-primary-foreground rounded-md flex items-center gap-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path><circle cx="12" cy="8" r="6"></circle></svg>
+                                        96.7%
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Class X -->
+                    <div class="shadcn-card rounded-xl bg-card text-card-foreground">
+                        <div class="p-6">
+                            <div class="flex flex-col sm:flex-row items-start justify-between gap-4">
+                                <div class="flex-1">
+                                    <h3 class="font-semibold text-xl text-primary mb-2 flex items-center gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>
+                                        Class X (School)
+                                    </h3>
+                                    <p class="text-lg font-medium text-secondary mb-1">Vignan's Bo Tree School <span class="text-muted-foreground text-base">, CBSE</span></p>
+                                    <p class="text-muted-foreground flex items-center gap-1 text-sm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>
+                                        2020 – 2021
+                                    </p>
+                                </div>
+                                <div class="text-right flex-shrink-0">
+                                    <span class="px-2.5 py-1 text-sm font-semibold bg-primary text-primary-foreground rounded-md flex items-center gap-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path><circle cx="12" cy="8" r="6"></circle></svg>
+                                        91.6%
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 px-5 bg-slate-50">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Projects</h2>
+                    <p class="text-lg text-muted-foreground max-w-2xl mx-auto">A showcase of my technical projects and practical applications</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Project 1 -->
+                    <div class="shadcn-card rounded-xl bg-card text-card-foreground flex flex-col h-full">
+                        <div class="p-6">
+                            <div class="flex items-start justify-between gap-2 mb-2">
+                                <h3 class="font-semibold text-lg text-primary flex-1">Handy X CBSE – Android App</h3>
+                                <span class="text-xs px-2 py-0.5 border rounded-md flex items-center gap-1 text-muted-foreground">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>2022</span>
+                            </div>
+                            <p class="text-muted-foreground text-sm leading-relaxed">Android app providing structured access to CBSE past papers and materials. Initially built with MIT App Inventor; redeveloped in Android Studio using Java.</p>
+                        </div>
+                        <div class="p-6 pt-0 flex-1 flex flex-col justify-end">
+                            <div class="space-y-4">
+                                <div>
+                                    <p class="text-sm font-medium text-secondary mb-2">Technologies:</p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded-md">Java</span>
+                                        <span class="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded-md">Android SDK</span>
+                                        <span class="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded-md">Google Drive API</span>
+                                    </div>
+                                </div>
+                                <div class="mt-4 pt-4 border-t">
+                                    <a href="https://github.com/Naga-Aditya-Anand/Textbooks" target="_blank" class="w-full text-center px-3 py-2 text-xs font-medium border rounded-md hover:bg-slate-50 flex items-center justify-center gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                                        View on GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Project 2 -->
+                    <div class="shadcn-card rounded-xl bg-card text-card-foreground flex flex-col h-full">
+                        <div class="p-6">
+                            <div class="flex items-start justify-between gap-2 mb-2">
+                                <h3 class="font-semibold text-lg text-primary flex-1">NoteLock – Encrypted Notes &amp; Password Manager</h3>
+                                <span class="text-xs px-2 py-0.5 border rounded-md flex items-center gap-1 text-muted-foreground">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>2023</span>
+                            </div>
+                            <p class="text-muted-foreground text-sm leading-relaxed">Secure Android app with AES encryption, biometric authentication, and Firebase sync for sensitive notes and credentials.</p>
+                        </div>
+                        <div class="p-6 pt-0 flex-1 flex flex-col justify-end">
+                            <div class="space-y-4">
+                                <div>
+                                    <p class="text-sm font-medium text-secondary mb-2">Technologies:</p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded-md">Java</span>
+                                        <span class="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded-md">AndroidX Biometric</span>
+                                        <span class="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded-md">Firebase Firestore</span>
+                                        <span class="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded-md">AES</span>
+                                    </div>
+                                </div>
+                                <div class="mt-4 pt-4 border-t">
+                                     <a href="https://github.com/Naga-Aditya-Anand/NoteLock" target="_blank" class="w-full text-center px-3 py-2 text-xs font-medium border rounded-md hover:bg-slate-50 flex items-center justify-center gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                                        View on GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 3 -->
+                    <div class="shadcn-card rounded-xl bg-card text-card-foreground flex flex-col h-full">
+                        <div class="p-6">
+                            <div class="flex items-start justify-between gap-2 mb-2">
+                                <h3 class="font-semibold text-lg text-primary flex-1">ClipIt – Universal Clipboard</h3>
+                                <span class="text-xs px-2 py-0.5 border rounded-md flex items-center gap-1 text-muted-foreground">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>2023</span>
+                            </div>
+                            <p class="text-muted-foreground text-sm leading-relaxed">Cross-platform clipboard syncing across Android, iOS, Web, and Windows using Flutter and Firebase.</p>
+                        </div>
+                        <div class="p-6 pt-0 flex-1 flex flex-col justify-end">
+                            <div class="space-y-4">
+                                <div>
+                                    <p class="text-sm font-medium text-secondary mb-2">Technologies:</p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded-md">Flutter</span>
+                                        <span class="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded-md">Dart</span>
+                                        <span class="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded-md">Firebase</span>
+                                    </div>
+                                </div>
+                                <div class="mt-4 pt-4 border-t">
+                                    <a href="https://github.com/Naga-Aditya-Anand/clipit" target="_blank" class="w-full text-center px-3 py-2 text-xs font-medium border rounded-md hover:bg-slate-50 flex items-center justify-center gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                                        View on GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Project 4 -->
+                    <div class="shadcn-card rounded-xl bg-card text-card-foreground flex flex-col h-full">
+                        <div class="p-6">
+                            <div class="flex items-start justify-between gap-2 mb-2">
+                                <h3 class="font-semibold text-lg text-primary flex-1">Automatic Number Plate Recognition (ANPR)</h3>
+                                <span class="text-xs px-2 py-0.5 border rounded-md flex items-center gap-1 text-muted-foreground">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>2025</span>
+                            </div>
+                            <p class="text-muted-foreground text-sm leading-relaxed">Computer vision pipeline for detecting and recognizing license plates with preprocessing, segmentation, and ML-based recognition.</p>
+                        </div>
+                        <div class="p-6 pt-0 flex-1 flex flex-col justify-end">
+                            <div class="space-y-4">
+                                <div>
+                                    <p class="text-sm font-medium text-secondary mb-2">Technologies:</p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded-md">Python</span>
+                                        <span class="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded-md">OpenCV</span>
+                                        <span class="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded-md">YOLO</span>
+                                        <span class="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded-md">TensorFlow</span>
+                                        <span class="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded-md">Keras</span>
+                                        <span class="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded-md">Scikit-learn</span>
+                                    </div>
+                                </div>
+                                <div class="mt-4 pt-4 border-t">
+                                    <a href="https://github.com/Naga-Aditya-Anand/Machine-Learning-Projects/tree/main/Automatic-Number-Plate-Recognition" target="_blank" class="w-full text-center px-3 py-2 text-xs font-medium border rounded-md hover:bg-slate-50 flex items-center justify-center gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                                        View on GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Project 5 -->
+                    <div class="shadcn-card rounded-xl bg-card text-card-foreground flex flex-col h-full">
+                        <div class="p-6">
+                            <div class="flex items-start justify-between gap-2 mb-2">
+                                <h3 class="font-semibold text-lg text-primary flex-1">Mini Movie Suggestions</h3>
+                                <span class="text-xs px-2 py-0.5 border rounded-md flex items-center gap-1 text-muted-foreground">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>2025</span>
+                            </div>
+                            <p class="text-muted-foreground text-sm leading-relaxed">Movie recommendation system using association rule mining with Apriori algorithm and visualization of frequent patterns.</p>
+                        </div>
+                        <div class="p-6 pt-0 flex-1 flex flex-col justify-end">
+                            <div class="space-y-4">
+                                <div>
+                                    <p class="text-sm font-medium text-secondary mb-2">Technologies:</p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded-md">Python</span>
+                                        <span class="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded-md">Pandas</span>
+                                        <span class="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded-md">NumPy</span>
+                                        <span class="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded-md">MLxtend</span>
+                                        <span class="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded-md">Matplotlib</span>
+                                        <span class="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded-md">Seaborn</span>
+                                    </div>
+                                </div>
+                                <div class="mt-4 pt-4 border-t">
+                                     <a href="https://github.com/Naga-Aditya-Anand/Machine-Learning-Projects/tree/main/Mini-Movie-Suggestions-Apriori" target="_blank" class="w-full text-center px-3 py-2 text-xs font-medium border rounded-md hover:bg-slate-50 flex items-center justify-center gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                                        View on GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Project 6 -->
+                    <div class="shadcn-card rounded-xl bg-card text-card-foreground flex flex-col h-full">
+                        <div class="p-6">
+                            <div class="flex items-start justify-between gap-2 mb-2">
+                                <h3 class="font-semibold text-lg text-primary flex-1">ML Recognition Projects</h3>
+                                <span class="text-xs px-2 py-0.5 border rounded-md flex items-center gap-1 text-muted-foreground">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>2025</span>
+                            </div>
+                            <p class="text-muted-foreground text-sm leading-relaxed">Various machine learning projects including Alphabet Recognition, Number Recognition, and other pattern recognition applications.</p>
+                        </div>
+                        <div class="p-6 pt-0 flex-1 flex flex-col justify-end">
+                            <div class="space-y-4">
+                                <div>
+                                    <p class="text-sm font-medium text-secondary mb-2">Technologies:</p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded-md">Python</span>
+                                        <span class="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded-md">TensorFlow</span>
+                                        <span class="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded-md">Keras</span>
+                                        <span class="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded-md">OpenCV</span>
+                                        <span class="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded-md">NumPy</span>
+                                    </div>
+                                </div>
+                                <div class="mt-4 pt-4 border-t">
+                                     <a href="https://github.com/Naga-Aditya-Anand/Machine-Learning-Projects" target="_blank" class="w-full text-center px-3 py-2 text-xs font-medium border rounded-md hover:bg-slate-50 flex items-center justify-center gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                                        View on GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- Certifications & Achievements Section -->
+        <section id="certifications" class="py-20 px-5">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Certifications &amp; Achievements</h2>
+                    <p class="text-lg text-muted-foreground max-w-2xl mx-auto">Professional certifications and recognized achievements</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Certifications -->
+                    <div class="shadcn-card rounded-xl bg-card text-card-foreground">
+                        <div class="p-6">
+                            <h3 class="font-semibold text-xl text-primary flex items-center gap-2 mb-4">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path><circle cx="12" cy="8" r="6"></circle></svg>
+                                Certifications
+                            </h3>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <div class="space-y-4">
+                                <div class="border-l-4 border-secondary pl-4">
+                                    <h4 class="font-medium text-slate-800">Programming Using Java</h4>
+                                    <p class="text-sm text-muted-foreground">Infosys</p>
+                                </div>
+                                <div class="border-l-4 border-secondary pl-4">
+                                    <h4 class="font-medium text-slate-800">Data Analysis With Python</h4>
+                                    <p class="text-sm text-muted-foreground">IBM <span class="text-xs ml-1 border px-1.5 py-0.5 rounded">Coursera</span></p>
+                                </div>
+                                <div class="border-l-4 border-secondary pl-4">
+                                    <h4 class="font-medium text-slate-800">Databases and SQL for Data Science with Python</h4>
+                                    <p class="text-sm text-muted-foreground">IBM <span class="text-xs ml-1 border px-1.5 py-0.5 rounded">Coursera</span></p>
+                                </div>
+                                <div class="border-l-4 border-secondary pl-4">
+                                    <h4 class="font-medium text-slate-800">Machine Learning with Python</h4>
+                                    <p class="text-sm text-muted-foreground">IBM <span class="text-xs ml-1 border px-1.5 py-0.5 rounded">Coursera</span></p>
+                                </div>
+                                 <div class="border-l-4 border-secondary pl-4">
+                                    <h4 class="font-medium text-slate-800">Python for Data Science, AI &amp; Development</h4>
+                                    <p class="text-sm text-muted-foreground">IBM <span class="text-xs ml-1 border px-1.5 py-0.5 rounded">Coursera</span></p>
+                                </div>
+                                <div class="border-l-4 border-secondary pl-4">
+                                    <h4 class="font-medium text-slate-800">Introduction to Deep Learning &amp; Neural Networks with Keras</h4>
+                                    <p class="text-sm text-muted-foreground">IBM <span class="text-xs ml-1 border px-1.5 py-0.5 rounded">Coursera</span></p>
+                                </div>
+                                <div class="border-l-4 border-secondary pl-4">
+                                    <h4 class="font-medium text-slate-800">Data Analytics Job Simulation Certificate</h4>
+                                    <p class="text-sm text-muted-foreground">Deloitte</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Achievements -->
+                    <div class="shadcn-card rounded-xl bg-card text-card-foreground">
+                        <div class="p-6">
+                            <h3 class="font-semibold text-xl text-primary flex items-center gap-2 mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path><circle cx="12" cy="8" r="6"></circle></svg>
+                                Key Achievements
+                            </h3>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <div class="space-y-3">
+                                <div class="flex items-start gap-3"><div class="w-2 h-2 bg-green-500 rounded-full mt-1.5 flex-shrink-0"></div><p>Current CGPA of 8.20 in AI &amp; Data Science</p></div>
+                                <div class="flex items-start gap-3"><div class="w-2 h-2 bg-green-500 rounded-full mt-1.5 flex-shrink-0"></div><p>Multiple IBM certifications in Data Science and Machine Learning</p></div>
+                                <div class="flex items-start gap-3"><div class="w-2 h-2 bg-green-500 rounded-full mt-1.5 flex-shrink-0"></div><p>Completed Deloitte Data Analytics Job Simulation</p></div>
+                                <div class="flex items-start gap-3"><div class="w-2 h-2 bg-green-500 rounded-full mt-1.5 flex-shrink-0"></div><p>Strong problem-solving skills demonstrated through LeetCode solutions</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
+        for (let i = 0; i < mobileMenuLinks.length; i++) {
+            mobileMenuLinks[i].addEventListener('click', () => {
+                 mobileMenu.classList.add('hidden');
+            });
+        }
+    </script>
+</body>
+
+</html>
+
+
+
